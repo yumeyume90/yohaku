@@ -656,7 +656,7 @@
     }
 
     .essay-lead-strong {
-      font-weight: 600;
+      font-weight: 300;
       color: var(--dark);
       opacity: 0.9;
     }
@@ -706,7 +706,7 @@
     }
 
     .essay-lead-strong {
-      font-weight: 600;
+      font-weight: 300;
       color: var(--dark);
       opacity: 0.9;
     }
@@ -769,9 +769,16 @@
       font-size: 0.82rem;
       font-weight: 300;
       letter-spacing: 0.3em;
-      color: var(--light-text);
+      color: var(--mid);
       margin-top: 0.6rem;
-      line-height: 2;
+      line-height: 2.4;
+    }
+
+    @media (max-width: 640px) {
+      .essay-lead-catch {
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+      }
     }
 
     .essay-lead-outer {
@@ -819,6 +826,12 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
     .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ── BR MOBILE ── */
+    .br-mobile { display: none; }
+    @media (max-width: 640px) {
+      .br-mobile { display: inline; }
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
@@ -877,7 +890,7 @@
         
         <div class="section-divider"></div>
       </div>
-      <p class="menu-lead reveal">今日の自分が、ほっとできるものを。</p>
+      <p class="menu-lead reveal">今日の自分が、<span class="br-mobile"><br></span>ほっとできるものを。</p>
       <div class="menu-categories">
 
         <div>
@@ -947,7 +960,7 @@
     <div class="section-inner">
       <div class="essay-lead-outer">
         <p class="essay-lead-title reveal">店主・夢乃が綴る、余白の記録</p>
-        <p class="essay-lead-catch reveal reveal-delay-1"><span class="essay-lead-strong">着飾らない言葉を、ここに置いています。</span><br>ここにあるものが、言葉が——<br>あなたのそのままをそっと、受け止めますように。</p>
+        <p class="essay-lead-catch reveal reveal-delay-1"><span class="essay-lead-strong">飾らない言葉を、そっとここに置きました。</span><br>ここにあるものが、言葉が——<br>あなたのそのままを受け止めますように。</p>
       </div>
       <div class="section-header essay-toggle" id="essay-toggle" onclick="toggleEssay()" role="button" tabindex="0" aria-expanded="false">
         <span class="section-label">Essay</span>
@@ -978,7 +991,7 @@
           </div>
           <div class="access-info-item">
             <span class="access-info-label">Address</span>
-            <span class="access-info-value">新潟県長岡市殿町2-5-1<br>ロイヤル長岡 2F</span>
+            <span class="access-info-value">新潟県長岡市殿町2-5-1<br>ロイヤル長岡 2F<br>（まちまち、ときどきカフェ。様間借り）</span>
           </div>
           <div class="access-info-item">
             <span class="access-info-label">Hours</span>
@@ -987,6 +1000,10 @@
           <div class="access-info-item">
             <span class="access-info-label">Owner</span>
             <span class="access-info-value">夢乃</span>
+          </div>
+          <div class="access-info-item">
+            <span class="access-info-label">Special Thanks</span>
+            <span class="access-info-value">夏子（まちまち、ときどきカフェ。 OWNER）<br>杏（DIRECTION / LOGO DESIGN）</span>
           </div>
         </div>
         <div class="access-map reveal reveal-delay-2">
