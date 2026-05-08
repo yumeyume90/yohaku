@@ -402,10 +402,34 @@
     .story-body em { font-style: normal; color: var(--dark); }
 
     @media (max-width: 640px) {
-      .story-split { flex-direction: column-reverse; min-height: auto; }
-      .story-text-col { padding: 3.5rem 1.8rem; }
-      .story-photo-col { flex: 0 0 auto; height: 55vw; }
-      .story-body { font-size: 0.9rem; }
+      /* スマホでも左テキスト・右写真の横並びを維持 */
+      .story-split {
+        flex-direction: row;
+        min-height: 100vw;
+        align-items: stretch;
+      }
+      .story-text-col {
+        flex: 1;
+        padding: 2.5rem 1.4rem 2.5rem 1.6rem;
+        justify-content: center;
+      }
+      .story-photo-col {
+        flex: 0 0 40%;
+        height: auto;
+      }
+      .story-photo-img {
+        object-position: center 15%;
+      }
+      .story-heading {
+        font-size: 0.82rem;
+        margin-bottom: 1.4rem;
+        letter-spacing: 0.3em;
+      }
+      .story-body {
+        font-size: 0.78rem;
+        line-height: 2.3;
+        letter-spacing: 0.1em;
+      }
     }
 
     /* ── MENU ── */
