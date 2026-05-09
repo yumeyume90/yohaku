@@ -339,7 +339,7 @@
     .story-split {
       display: flex;
       align-items: stretch;
-      min-height: 70vh;
+      min-height: 88vh;
     }
 
     /* 左カラム：テキスト */
@@ -353,9 +353,10 @@
 
     /* 右カラム：写真スライドショー */
     .story-photo-col {
-      flex: 0 0 44%;
+      flex: 0 0 36%;
       position: relative;
       overflow: hidden;
+      min-height: 620px;
     }
     .story-photo-slide {
       position: absolute;
@@ -398,6 +399,12 @@
     .story-line { display: block; }
     .story-body em { font-style: normal; color: var(--dark); }
 
+    /* 句読点が単独で行頭・行末に取り残されるのを防ぐ */
+    .story-body { line-break: strict; }
+    .story-line { hanging-punctuation: allow-end; }
+    /* 強制的に分割しない範囲（、で取り残されないようにする） */
+    .nobr { white-space: nowrap; }
+
     /* PC版とスマホ版の改行パターン出し分け */
     .story-pc { display: block; }
     .story-sp { display: none; }
@@ -420,8 +427,9 @@
       .story-photo-col {
         flex: 0 0 auto;
         width: 100%;
-        height: 60vw;
-        min-height: 260px;
+        height: 110vw;
+        min-height: 380px;
+        max-height: 560px;
       }
       .story-heading {
         font-size: 0.92rem;
@@ -807,7 +815,7 @@
             <span class="story-line">疲れていても、迷っていても、</span>
             <span class="story-line">そのままでいられる場所を。</span>
             <span class="story-space"></span>
-            <span class="story-line">心が少しずつ整って、帰り道に肩の力が抜けて、</span>
+            <span class="story-line">心が少しずつ整って、<span class="nobr">帰り道に肩の力が抜けて、</span></span>
             <span class="story-line"><em>「明日からも、前を向いて生きていこう。」</em></span>
             <span class="story-line">と思える。</span>
             <span class="story-line">そんな場所を、店主・夢乃がお届けします。</span>
