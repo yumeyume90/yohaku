@@ -122,23 +122,18 @@
       background: var(--cream);
     }
 
-    /* ロゴスライド専用：背景はcream、ロゴ画像を中央に表示 */
-    .slide[data-type="logo"] .slide-bg {
-      background-color: var(--cream);
-      background-image: none !important;
-      transform: none !important;
-    }
-
     .slide-logo-wrap {
       position: absolute;
       inset: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
+      padding-bottom: clamp(4rem, 12vh, 8rem);
       gap: 1.8rem;
       opacity: 0;
       transition: opacity 1s ease 0.4s;
+      z-index: 2;
     }
 
     .slide[data-type="logo"].active .slide-logo-wrap {
@@ -146,15 +141,7 @@
     }
 
     .slide-logo-img {
-      max-width: min(900px, 88vw);
-      width: auto;
-      height: auto;
-      display: block;
-    }
-    @media (max-width: 640px) {
-      .slide-logo-img {
-        max-width: 92vw;
-      }
+      display: none;
     }
 
     .slide-logo-sub {
@@ -162,8 +149,9 @@
       font-size: 1.05rem;
       font-weight: 300;
       letter-spacing: 0.5em;
-      color: var(--dark);
-      opacity: 0.85;
+      color: var(--cream);
+      opacity: 0.95;
+      text-shadow: 0 1px 6px rgba(42,37,32,0.35);
     }
 
     /* オーバーレイ */
@@ -233,13 +221,7 @@
       transition: background 0.3s, border-color 0.3s;
     }
 
-    #hero.logo-slide .slider-arrow {
-      background: rgba(255,255,255,0.45);
-      border-color: rgba(180,155,120,0.35);
-    }
-    #hero.logo-slide .slider-arrow svg { stroke: var(--warm-yellow); }
     .slider-arrow:hover { background: rgba(248,245,238,0.28); border-color: rgba(248,245,238,0.5); }
-    #hero.logo-slide .slider-arrow:hover { background: rgba(255,255,255,0.65); }
 
     .slider-arrow svg {
       width: 16px; height: 16px;
@@ -267,8 +249,6 @@
       padding: 0;
     }
 
-    #hero.logo-slide .dot { border-color: rgba(42,37,32,0.35); }
-
     .dot.active {
       background: var(--warm-yellow);
       border-color: var(--warm-yellow);
@@ -292,9 +272,7 @@
       font-size: 0.78rem; letter-spacing: 0.28em;
       color: rgba(248,245,238,0.52); z-index: 10; transition: color 0.4s;
     }
-    #hero.logo-slide .slide-counter { color: rgba(42,37,32,0.38); }
     .slide-counter .current { font-size: 0.95rem; color: rgba(248,245,238,0.82); }
-    #hero.logo-slide .slide-counter .current { color: rgba(42,37,32,0.6); }
 
     /* スクロールヒント */
     .scroll-hint {
@@ -304,7 +282,6 @@
       display: flex; flex-direction: column; align-items: center; gap: 8px;
       z-index: 10; opacity: 0.5; transition: opacity 0.4s;
     }
-    #hero.logo-slide .scroll-hint { opacity: 0; pointer-events: none; }
     .scroll-hint span {
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.62rem; letter-spacing: 0.32em;
@@ -760,7 +737,8 @@
   <section id="hero" class="logo-slide">
     <!-- スライド1: ロゴ -->
     <div class="slide active" data-index="0" data-type="logo">
-      <div class="slide-bg"></div>
+      <div class="slide-bg" style="background-image:url('images/logo3_2.PNG'); background-position:center 50%;"></div>
+      <div class="slide-overlay"></div>
       <div class="slide-logo-wrap">
         <img class="slide-logo-img" src="images/logo3_2.PNG" alt="yohaku." />
         <p class="slide-logo-sub">余白に、整う。</p>
