@@ -805,7 +805,7 @@
           <span class="story-pc">
             <span class="story-line">疲れていても、迷っていても、そのままでいられる場所を。</span>
             <span class="story-space"></span>
-            <span class="story-line">心が少しずつ整って、帰り道に肩の力が抜けて。</span>
+            <span class="story-line">心が少しずつ整って、帰り道に肩の力が抜けて、</span>
             <span class="story-line"><em>「明日からも、前を向いて生きていこう。」</em>と思える。</span>
             <span class="story-line">そんな場所を、店主・夢乃がお届けします。</span>
           </span>
@@ -815,7 +815,7 @@
             <span class="story-line">疲れていても、迷っていても、</span>
             <span class="story-line">そのままでいられる場所を。</span>
             <span class="story-space"></span>
-            <span class="story-line">心が少しずつ整って、<span class="nobr">帰り道に肩の力が抜けて。</span></span>
+            <span class="story-line">心が少しずつ整って、<span class="nobr">帰り道に肩の力が抜けて、</span></span>
             <span class="story-line"><em>「明日からも、前を向いて生きていこう。」</em></span>
             <span class="story-line">と思える。</span>
             <span class="story-line">そんな場所を、店主・夢乃がお届けします。</span>
@@ -882,12 +882,12 @@
         <p class="essay-lead-title reveal">店主・夢乃が綴る、余白の記録</p>
         <p class="essay-lead-catch reveal reveal-delay-1"><span class="essay-lead-strong">飾らない言葉を、そっとここに置きました。</span><br>ここにあるものが、言葉が——<br>あなたのそのままを受け止めますように。</p>
       </div>
-      <div class="section-header essay-toggle" id="essay-toggle" onclick="toggleEssay()" role="button" tabindex="0" aria-expanded="false">
+      <div class="section-header essay-toggle open" id="essay-toggle" onclick="toggleEssay()" role="button" tabindex="0" aria-expanded="true">
         <span class="section-label">Essay</span>
         <div class="section-divider"></div>
-        <span class="essay-toggle-icon" id="essay-toggle-icon">＋</span>
+        <span class="essay-toggle-icon open" id="essay-toggle-icon">＋</span>
       </div>
-      <div id="essay-body" class="essay-body">
+      <div id="essay-body" class="essay-body open">
         <div id="essay-container">
           <p class="essay-loading">読み込み中...</p>
         </div>
@@ -1082,11 +1082,11 @@
     const MICROCMS_ENDPOINT = 'essay';
 
     const SAMPLE_ESSAYS = [
-      { id: '1', title: '弱さを、受け入れる。', publishedAt: '2025-04-01T09:00:00.000Z', body: '私は強くないから、弱さを受け入れることができるんだと思う。\n\n私は昔、人に優しくできなかった。自分が弱ってしまった時、強くいないといけないと何度も思った。泣いている場合じゃない、休んでいる場合じゃない、正しくいないといけないと、何度もそう感じた。今も、止まったら死ぬと思っている。\n\nでも、心がすり減っていってしまった時、本当に私はどうしたいのかをたくさん考えた。強くないことと、すぐ泣くことの、何がいけないと思っているんだろう。\n\n強くないから、弱ることの痛みがわかる。すぐに泣くから、すんと気持ちを切り替えられる。\n\nいつもいつも自分を否定してばかりだった私が、強くならないといけないと思っていた私が、あなたとの暮らしの中で、弱さもずるさも持っている私を受け入れることができた。' },
-      { id: '2', title: '雨の日のカフェ', publishedAt: '2025-04-08T10:00:00.000Z', body: '雨の音はなぜこんなにも落ち着くのでしょう。' },
-      { id: '3', title: '好きな本の話', publishedAt: '2025-04-15T11:00:00.000Z', body: '棚に並んだ本たちは、それぞれ誰かの時間を生きています。' },
-      { id: '4', title: '冬の終わりに', publishedAt: '2025-03-05T09:00:00.000Z', body: '梅が咲いていました。白くて小さな花が、まだ寒い空気の中でひっそりと。' },
-      { id: '5', title: 'コーヒーと音楽', publishedAt: '2025-03-20T14:00:00.000Z', body: 'BGMを選ぶのはとても悩ましい仕事です。' },
+      { id: '1', title: '弱さを、受け入れる。', publishedAt: '2026-04-01T09:00:00.000Z', body: '私は強くないから、弱さを受け入れることができるんだと思う。\n\n私は昔、人に優しくできなかった。自分が弱ってしまった時、強くいないといけないと何度も思った。泣いている場合じゃない、休んでいる場合じゃない、正しくいないといけないと、何度もそう感じた。今も、止まったら死ぬと思っている。\n\nでも、心がすり減っていってしまった時、本当に私はどうしたいのかをたくさん考えた。強くないことと、すぐ泣くことの、何がいけないと思っているんだろう。\n\n強くないから、弱ることの痛みがわかる。すぐに泣くから、すんと気持ちを切り替えられる。\n\nいつもいつも自分を否定してばかりだった私が、強くならないといけないと思っていた私が、あなたとの暮らしの中で、弱さもずるさも持っている私を受け入れることができた。' },
+      { id: '2', title: '雨の日のカフェ', publishedAt: '2026-04-08T10:00:00.000Z', body: '雨の音はなぜこんなにも落ち着くのでしょう。' },
+      { id: '3', title: '好きな本の話', publishedAt: '2026-04-15T11:00:00.000Z', body: '棚に並んだ本たちは、それぞれ誰かの時間を生きています。' },
+      { id: '4', title: '冬の終わりに', publishedAt: '2026-03-05T09:00:00.000Z', body: '梅が咲いていました。白くて小さな花が、まだ寒い空気の中でひっそりと。' },
+      { id: '5', title: 'コーヒーと音楽', publishedAt: '2026-03-20T14:00:00.000Z', body: 'BGMを選ぶのはとても悩ましい仕事です。' },
     ];
 
     async function fetchEssays() {
@@ -1103,17 +1103,18 @@
 
     function formatDate(dateStr) {
       const d = new Date(dateStr);
+      const y = d.getFullYear();
       const m = d.getMonth() + 1;
       const day = d.getDate();
-      return { month: m, label: `${m}/${day}` };
+      return { year: y, month: m, label: `${m}/${day}`, ym: `${y}-${m}`, ymLabel: `${y}.${m}月` };
     }
 
     function groupByMonth(essays) {
       const groups = {};
       essays.forEach(essay => {
-        const { month } = formatDate(essay.publishedAt);
-        if (!groups[month]) groups[month] = [];
-        groups[month].push(essay);
+        const { ym } = formatDate(essay.publishedAt);
+        if (!groups[ym]) groups[ym] = [];
+        groups[ym].push(essay);
       });
       return groups;
     }
@@ -1129,14 +1130,21 @@
       const container = document.getElementById('essay-container');
       if (!essays.length) { container.innerHTML = '<p class="essay-empty">まだエッセイはありません。</p>'; return; }
       const groups = groupByMonth(essays);
-      const months = Object.keys(groups).sort((a, b) => b - a);
-      container.innerHTML = months.map(month => {
-        const items = groups[month];
+      // 年月キー（"2026-5" 形式）を新しい順にソート
+      const keys = Object.keys(groups).sort((a, b) => {
+        const [ay, am] = a.split('-').map(Number);
+        const [by, bm] = b.split('-').map(Number);
+        if (ay !== by) return by - ay;
+        return bm - am;
+      });
+      container.innerHTML = keys.map(key => {
+        const items = groups[key];
+        const ymLabel = formatDate(items[0].publishedAt).ymLabel;
         const itemsHTML = items.map(essay => {
           const { label } = formatDate(essay.publishedAt);
           return `<div class="essay-item" onclick="openModal('${essay.id}')"><span class="essay-item-label">${label}</span><span class="essay-item-arrow">→</span></div>`;
         }).join('');
-        return `<div class="essay-month-group"><div class="essay-month-title" onclick="toggleMonth(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleMonth(this);}"><span class="month-jp">${month}月</span><div class="month-line"></div><span class="month-icon">＋</span></div><div class="essay-month-body"><div class="essay-list">${itemsHTML}</div></div></div>`;
+        return `<div class="essay-month-group"><div class="essay-month-title" onclick="toggleMonth(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleMonth(this);}"><span class="month-jp">${ymLabel}</span><div class="month-line"></div><span class="month-icon">＋</span></div><div class="essay-month-body"><div class="essay-list">${itemsHTML}</div></div></div>`;
       }).join('');
     }
 
