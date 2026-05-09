@@ -299,18 +299,19 @@
       100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
     }
 
-    /* 横長写真: スマホ縦向きでcontain+背景色（上下が切れない） */
+    /* 横長写真: スマホ縦向きでもcoverで画面いっぱいに表示 */
     @media (max-width: 600px) and (orientation: portrait) {
       .slide.is-landscape .slide-bg {
-        background-size: contain;
-        background-position: center 20%;
-        background-color: var(--cream);
+        background-size: cover;
+        background-position: center 50%;
       }
       .slide.is-landscape .slide-overlay {
         background: linear-gradient(
           to bottom,
-          transparent 0%, transparent 55%,
-          rgba(42,37,32,0.40) 80%, rgba(42,37,32,0.58) 100%
+          rgba(42,37,32,0.05) 0%,
+          rgba(42,37,32,0.0) 35%,
+          rgba(42,37,32,0.40) 75%,
+          rgba(42,37,32,0.62) 100%
         );
       }
     }
@@ -397,38 +398,48 @@
     .story-line { display: block; }
     .story-body em { font-style: normal; color: var(--dark); }
 
+    /* PC版とスマホ版の改行パターン出し分け */
+    .story-pc { display: block; }
+    .story-sp { display: none; }
+    @media (max-width: 640px) {
+      .story-pc { display: none; }
+      .story-sp { display: block; }
+    }
+
     @media (max-width: 640px) {
       .story-split {
-        flex-direction: row;
-        min-height: 105vw;
+        flex-direction: column;
+        min-height: auto;
         align-items: stretch;
       }
       .story-text-col {
-        flex: 1;
-        padding: 2rem 1rem 2rem 1.4rem;
-        justify-content: center;
+        flex: 1 1 auto;
+        padding: 3.5rem 1.8rem 2.5rem;
+        justify-content: flex-start;
       }
       .story-photo-col {
-        flex: 0 0 46%;
-        height: auto;
+        flex: 0 0 auto;
+        width: 100%;
+        height: 60vw;
+        min-height: 260px;
       }
       .story-heading {
-        font-size: 0.75rem;
-        margin-bottom: 1rem;
-        letter-spacing: 0.25em;
+        font-size: 0.92rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.32em;
       }
       .story-body {
-        font-size: 0.72rem;
-        line-height: 2.0;
-        letter-spacing: 0.03em;
+        font-size: 0.92rem;
+        line-height: 2.2;
+        letter-spacing: 0.08em;
         word-break: keep-all;
         overflow-wrap: break-word;
       }
       .story-strong {
-        font-size: 0.76rem !important;
-        letter-spacing: 0.06em !important;
+        font-size: 1rem !important;
+        letter-spacing: 0.14em !important;
       }
-      .story-space { height: 0.4em; }
+      .story-space { height: 0.6em; }
     }
 
     /* ── MENU ── */
@@ -781,10 +792,26 @@
         <p class="story-body">
           <span class="story-line story-strong">呼吸と呼吸の、あいだのような場所を。</span>
           <span class="story-space"></span>
-          <span class="story-line">疲れていても、迷っていても、そのままでいられる場所を。</span>
-          <span class="story-space"></span>
-          <span class="story-line">心が少しずつ整って、帰り道に肩の力が抜けて、<em>「明日からも、前を向いて生きていこう。」</em>と思える。</span>
-          <span class="story-line">そんな場所を、店主・夢乃がお届けします。</span>
+
+          <!-- PC版（641px以上）の改行パターン -->
+          <span class="story-pc">
+            <span class="story-line">疲れていても、迷っていても、そのままでいられる場所を。</span>
+            <span class="story-space"></span>
+            <span class="story-line">心が少しずつ整って、帰り道に肩の力が抜けて、</span>
+            <span class="story-line"><em>「明日からも、前を向いて生きていこう。」</em>と思える。</span>
+            <span class="story-line">そんな場所を、店主・夢乃がお届けします。</span>
+          </span>
+
+          <!-- スマホ版（640px以下）の改行パターン -->
+          <span class="story-sp">
+            <span class="story-line">疲れていても、迷っていても、</span>
+            <span class="story-line">そのままでいられる場所を。</span>
+            <span class="story-space"></span>
+            <span class="story-line">心が少しずつ整って、帰り道に肩の力が抜けて、</span>
+            <span class="story-line"><em>「明日からも、前を向いて生きていこう。」</em></span>
+            <span class="story-line">と思える。</span>
+            <span class="story-line">そんな場所を、店主・夢乃がお届けします。</span>
+          </span>
         </p>
       </div>
       <!-- 右：写真スライドショー -->
